@@ -5,7 +5,7 @@ main.o: main.cpp
 	g++ -c -Wall main.cpp -o main.o
 
 flight.o: impl/flight.cpp
-	g++  -Wall -Iinclude impl/flight.cpp impl/astronaut.cpp -o flight.o
+	g++ -c -Wall -Iinclude impl/flight.cpp -o flight.o
 
 astronaut.o: impl/astronaut.cpp
 	g++ -c -Wall -Iinclude impl/astronaut.cpp -o astronaut.o
