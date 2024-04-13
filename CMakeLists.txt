@@ -6,6 +6,7 @@ add_executable(project
   main.cpp
   impl/astronaut.cpp 
   impl/flight.cpp
+  impl/interface.cpp
 )
 
 target_include_directories(project PRIVATE include)
