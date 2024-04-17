@@ -7,14 +7,16 @@
 
 class Flight {
 private:
+  int id;
   int code;
   FlightStateEnum flightState;
   std::list<Astronaut> astronauts;
 
 public:
   Flight();
-  Flight(int code, FlightStateEnum flightState, std::list<Astronaut> astronauts);
+  Flight(int id, int code, FlightStateEnum flightState, std::list<Astronaut> astronauts);
 
+  int getId();
   int getCode();
   FlightStateEnum getFlightState();
   std::list<Astronaut> getAstronauts();

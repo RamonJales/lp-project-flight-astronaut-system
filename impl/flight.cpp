@@ -4,12 +4,14 @@
 
 Flight::Flight(){};
 
-Flight::Flight(int code, FlightStateEnum flightState, std::list<Astronaut> astronauts) {
+Flight::Flight(int id, int code, FlightStateEnum flightState, std::list<Astronaut> astronauts) {
+  this->id = id;
   this->code = code;
   this->flightState = flightState;
   this->astronauts = astronauts;
 }
 
+int Flight::getId() { return this->id; }
 int Flight::getCode() { return this->code; }
 FlightStateEnum Flight::getFlightState() { return this->flightState; } 
 std::list<Astronaut> Flight::getAstronauts() { return this->astronauts; }
