@@ -5,14 +5,16 @@
 
 class Astronaut {
 private:
+  int id;
   std::string name;
   std::string cpf;
   int age;
 
 public:
   Astronaut();
-  Astronaut(std::string cpf, std::string name, int age);
+  Astronaut(int id, std::string cpf, std::string name, int age);
 
+  int getId();
   std::string getName();
   std::string getCpf();
   int getAge();
