@@ -10,16 +10,16 @@ private:
   int id;
   int code;
   FlightStateEnum flightState;
-  std::list<Astronaut> astronauts;
+  std::list<std::string> astronautsCpf;
 
 public:
   Flight();
-  Flight(int id, int code, FlightStateEnum flightState, std::list<Astronaut> astronauts);
+  Flight(int id, int code, FlightStateEnum flightState, std::list<std::string> astronautsCpf);
 
   int getId();
   int getCode();
   FlightStateEnum getFlightState();
-  std::list<Astronaut> getAstronauts();
+  std::list<std::string> getAstronautsCpf();
 
   void setCode(int code);
   void setFlightState(FlightStateEnum flightState);
