@@ -37,10 +37,9 @@ void register_flight(Flight obj, std::list<Flight> &databaseFlight) {
     databaseFlight.push_back(obj);
 }
 
-// bool add_asrtonaut_flight_by_cpf(std::string cpf, Flight flight) {
-//     //dentro da minha base de dados faça a busca procurando pelo cpf e então coloque no voo
-//     if (flight.getFlightState() == PLANNED) {
-//         flight.getAstronauts().push_back();
-//     }
-// }
+bool add_asrtonaut_to_flight_by_cpf(std::string cpf, Flight flight) {
+    if (flight.getFlightState() == PLANNED) {
+        flight.getAstronautsCpf().push_back(cpf);
+    }
+}
 

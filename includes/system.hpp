@@ -16,7 +16,7 @@ void register_astronaut(Astronaut obj, std::list<Astronaut> databaseAstronaut);
 
 void register_flight(Flight obj, std::list<Flight> databaseFlight);
 
-bool add_asrtonaut_flight_by_cpf(std::string cpf, Flight flight);
+bool add_asrtonaut_to_flight_by_cpf(std::string cpf, Flight flight);
 
 bool remove_asrtonaut_flight_by_cpf(std::string cpf, Flight flight);
 
