@@ -45,3 +45,25 @@ bool add_asrtonaut_to_flight_by_cpf(std::string cpf, Flight &flight) {
     return false;
 }
 
+bool remove_astronaut_from_flight_by_cpf(std::string cpf, Flight &flight) {
+    if (flight.getFlightState() == PLANNING) {
+        flight.getAstronautsCpf().remove(cpf);
+        return true;
+    }
+    return false;
+}
+
+bool launch_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
+    if (flight.getFlightState() == PLANNING && flight.getAstronautsCpf().size() > 0) {
+        bool allAstronautsAvailable = true;
+        for (auto& cpf : flight.getAstronautsCpf()) {
+            Astronaut* astronaut = findAstronautByCpf(cpf, databaseAstronaut);
+            if (astronaut->isAvailable() == true) {
+                astronaut->setAvailable(false);
+            }
+        }
+        flight.setFlightState(ONGOING);
+        return true;
+    }
+    return false;
+}
