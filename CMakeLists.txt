@@ -7,6 +7,7 @@ add_executable(project
   impl/astronaut.cpp 
   impl/flight.cpp
   impl/interface.cpp
+  impl/system.cpp
 )
 
 target_include_directories(project PRIVATE include)
