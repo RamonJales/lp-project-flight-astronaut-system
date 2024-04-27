@@ -67,3 +67,16 @@ bool launch_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
     }
     return false;
 }
+
+bool boom_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
+    if (flight.getFlightState() == ONGOING) {
+        for (auto& cpf : flight.getAstronautsCpf()) {
+            Astronaut* astronaut = findAstronautByCpf(cpf, databaseAstronaut);
+            astronaut->setAvailable(false);
+            astronaut->setAstronautState(DEAD);
+        }
+        flight.setFlightState(PLANNING);
+        return true;
+    }
+    return false;
+}
