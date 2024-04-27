@@ -2,7 +2,7 @@
 #define FLIGH_STATE_ENUM_H
 
 enum FlightStateEnum {
-    PLANNED,
+    PLANNING,
     ONGOING,
     FINESHED
 };
