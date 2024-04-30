@@ -75,8 +75,23 @@ bool boom_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
             astronaut->setAvailable(false);
             astronaut->setAstronautState(DEAD);
         }
-        flight.setFlightState(PLANNING);
+        flight.setFlightState(EXPLODED);
         return true;
     }
     return false;
 }
+
+bool finish_Flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
+    if (flight.getFlightState() == ONGOING) {
+        for (auto& cpf : flight.getAstronautsCpf()) {
+            Astronaut* astronaut = findAstronautByCpf(cpf, databaseAstronaut);
+            if (astronaut->getAstronautState() == ALIVE && astronaut->isAvailable() == false) {
+                astronaut->setAvailable(true);
+            }
+        }
+        flight.setFlightState(FINESHED);
+        return true;
+    }
+    return false;
+}
+
