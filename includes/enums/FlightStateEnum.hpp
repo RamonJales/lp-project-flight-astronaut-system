@@ -4,7 +4,8 @@
 enum FlightStateEnum {
     PLANNING,
     ONGOING,
-    FINESHED
+    FINESHED,
+    EXPLODED
 };
 
 #endif
