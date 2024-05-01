@@ -95,7 +95,6 @@ bool finish_Flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
     return false;
 }
 
-//falta relacionar o astronauta com os seus voos
 void list_dead_astronauts(std::list<Astronaut> databaseAstronaut) {
     for (auto& astronaut : databaseAstronaut) {
         if (astronaut.getAstronautState() == DEAD) {
