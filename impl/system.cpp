@@ -109,3 +109,77 @@ void list_dead_astronauts(std::list<Astronaut> databaseAstronaut) {
         }
     }
 }
+
+void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databaseAstronaut) {
+    int countPlanning, countOngoing, countExploded, countFinished = 0;
+    sort_flights_by_state(databaseFlight);
+
+    for (auto& flight : databaseFlight) {
+        if(flight.getFlightState() == PLANNING) {
+            if (countPlanning == 0) {
+                std::cout << "- PLANNING:" << std::endl;
+                std::cout << "Flight code: " << flight.getCode() << std::endl;
+                countPlanning++;
+            }
+            else {
+                std::cout << "Flight code: " << flight.getId() << std::endl;
+            }
+            std::cout << "- Flight astronauts:" << std::endl;
+            for (auto& cpf : flight.getAstronautsCpf()) {
+                Astronaut* astronaut = findAstronautByCpf(cpf, databaseAstronaut);
+                std::cout << "Astronaut: " << astronaut->getName() << std::endl;
+            }
+        }
+        else if(flight.getFlightState() == ONGOING) {
+            if (countOngoing == 0) {
+                std::cout << "- ONGOING:" << std::endl;
+                std::cout << "Flight code: " << flight.getCode() << std::endl;
+                countOngoing++;
+            }
+            else {
+                std::cout << "Flight code: " << flight.getId() << std::endl;
+            }
+            std::cout << "- Flight astronauts:" << std::endl;
+            for (auto& cpf : flight.getAstronautsCpf()) {
+                Astronaut* astronaut = findAstronautByCpf(cpf, databaseAstronaut);
+                std::cout << "Astronaut: " << astronaut->getName() << std::endl;
+            }
+        }
+        else if(flight.getFlightState() == EXPLODED) {
+            if (countExploded == 0) {
+                std::cout << "- EXPLODED:" << std::endl;
+                std::cout << "Flight code: " << flight.getCode() << std::endl;
+                countExploded++;
+            }
+            else {
+                std::cout << "Flight code: " << flight.getId() << std::endl;
+            }
+            std::cout << "- Flight astronauts:" << std::endl;
+            for (auto& cpf : flight.getAstronautsCpf()) {
+                Astronaut* astronaut = findAstronautByCpf(cpf, databaseAstronaut);
+                std::cout << "Astronaut: " << astronaut->getName() << std::endl;
+            }
+        }
+        else if(flight.getFlightState() == FINESHED) {
+            if (countFinished == 0) {
+                std::cout << "- FINISHED:" << std::endl;
+                std::cout << "Flight code: " << flight.getCode() << std::endl;
+                countFinished++;
+            }
+            else {
+                std::cout << "Flight code: " << flight.getId() << std::endl;
+            }
+            std::cout << "- Flight astronauts:" << std::endl;
+            for (auto& cpf : flight.getAstronautsCpf()) {
+                Astronaut* astronaut = findAstronautByCpf(cpf, databaseAstronaut);
+                std::cout << "Astronaut: " << astronaut->getName() << std::endl;
+            }
+        }
+    }
+}
+
+void sort_flights_by_state(std::list<Flight>& flights) {
+    flights.sort([](Flight& a, Flight& b) {
+        return a.getFlightState() < b.getFlightState();
+    });
+}
