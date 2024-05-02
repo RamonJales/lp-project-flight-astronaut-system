@@ -2,12 +2,16 @@
 #include "includes/astronaut.hpp"
 #include "includes/flight.hpp"
 #include "includes/interface.hpp"
+#include "includes/system.hpp"
+#include "includes/enums/AstronautStateEnum.hpp"
 #include <list>
 
 
 int main() {
     std::list<Flight> databaseFlight;
     std::list<Astronaut> databaseAstronaut;
+    int flightId = 1;
+    int astronautId = 1;
 
     print_menu();
 
@@ -17,8 +21,27 @@ int main() {
         std::cin >> option;
         switch (option) {
             case 1:
-                // Code for option 1
+            {
+                Astronaut astronaut;
+                std::string name;
+                std::string cpf;
+                int age;
+                std::list<int> flightCodes;
+
+                std::cout << "Enter astronaut name: ";
+                std::cin >> name;
+
+                std::cout << "Enter astronaut cpf: ";
+                std::cin >> cpf;
+
+                std::cout << "Enter astronaut age: ";
+                std::cin >> age;
+
+                astronaut = Astronaut(astronautId, cpf, name, age, true, ALIVE, flightCodes);
+                register_astronaut(astronaut, databaseAstronaut);
+                astronautId++;
                 break;
+            }
             case 2:
                 // Code for option 2
                 break;
