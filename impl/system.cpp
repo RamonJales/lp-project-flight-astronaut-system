@@ -109,6 +109,12 @@ void list_dead_astronauts(std::list<Astronaut> databaseAstronaut) {
     }
 }
 
+void sort_flights_by_state(std::list<Flight>& flights) {
+    flights.sort([](Flight& a, Flight& b) {
+        return a.getFlightState() < b.getFlightState();
+    });
+}
+
 void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databaseAstronaut) {
     int countPlanning, countOngoing, countExploded, countFinished = 0;
     sort_flights_by_state(databaseFlight);
@@ -175,10 +181,4 @@ void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databas
             }
         }
     }
-}
-
-void sort_flights_by_state(std::list<Flight>& flights) {
-    flights.sort([](Flight& a, Flight& b) {
-        return a.getFlightState() < b.getFlightState();
-    });
 }
