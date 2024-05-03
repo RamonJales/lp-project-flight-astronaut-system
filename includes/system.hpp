@@ -32,4 +32,6 @@ void list_dead_astronauts(std::list<Astronaut> list);
 
 void sort_flights_by_state(std::list<Flight>& flights);
 
+void list_astronauts(std::list<Astronaut> databaseAstronaut);
+
 #endif

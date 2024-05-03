@@ -182,3 +182,12 @@ void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databas
         }
     }
 }
+
+void list_astronauts(std::list<Astronaut> databaseAstronaut) {
+    for (auto& astronaut : databaseAstronaut) {
+        std::cout << "Name: " << astronaut.getName() << std::endl;
+        std::cout << "Astronaut state: " << astronaut.getAstronautState() << std::endl;
+        std::cout << "Available: " << astronaut.isAvailable() << std::endl;
+        std::cout << "--------------------------------------------" << std::endl;
+    }
+}
