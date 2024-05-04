@@ -15,6 +15,8 @@ int main() {
 
     print_menu();
 
+    //tratar as exceções
+
     int option;
     do {
         std::cout << "Enter your choice: ";
@@ -43,8 +45,19 @@ int main() {
                 break;
             }
             case 2:
-                // Code for option 2
-                break;
+                {
+                    Flight flight;
+                    int code;
+                    std::list<std::string> astronautsCpf;
+
+                    std::cout << "Enter flight code: ";
+                    std::cin >> code;
+
+                    flight = Flight(flightId, code, PLANNING, astronautsCpf);
+                    register_flight(flight, databaseFlight);
+                    flightId++;
+                    break;
+                }
             case 3:
                 // Code for option 3
                 break;
@@ -66,6 +79,11 @@ int main() {
             case 9:
                 // Code for option 9
                 break;
+            case 10:
+            {
+                list_astronauts(databaseAstronaut);
+                break;
+            }
             default:
                 std::cout << "Invalid choice. Please try again." << std::endl;
                 break;
