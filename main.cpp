@@ -59,7 +59,29 @@ int main() {
                     break;
                 }
             case 3:
-                // Code for option 3
+                {
+                    int flightCode;
+                    std::string cpf;
+                    Flight* flight;
+
+                    std::cout << "Digite astronaut cpf: ";
+                    std::cin >> cpf;
+
+                    std::cout << "Digite o código do voo: ";
+                    std::cin >> flightCode;
+
+                    flight = findFlightByCode(flightCode, databaseFlight);
+
+                    if (flight != nullptr) {
+                        if (add_asrtonaut_to_flight_by_cpf(cpf, *flight)) {
+                            std::cout << "Astronauta adicionado ao voo com sucesso." << std::endl;
+                        } else {
+                            std::cout << "Não foi possível adicionar o astronauta ao voo." << std::endl;
+                        }
+                    } else {
+                        std::cout << "Voo não encontrado." << std::endl;
+                    }
+                }
                 break;
             case 4:
                 // Code for option 4
