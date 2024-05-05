@@ -26,7 +26,7 @@ bool launch_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut);
 
 bool boom_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut);
 
-bool finish_Flight(Flight &flight, std::list<Astronaut> &databaseAstronaut);
+bool finish_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut);
 
 void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databaseAstronaut);
 

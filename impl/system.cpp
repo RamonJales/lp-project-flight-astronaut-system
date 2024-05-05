@@ -90,7 +90,7 @@ bool boom_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
     return false;
 }
 
-bool finish_Flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
+bool finish_flight(Flight &flight, std::list<Astronaut> &databaseAstronaut) {
     if (flight.getFlightState() == ONGOING) {
         for (auto& cpf : flight.getAstronautsCpf()) {
             Astronaut* astronaut = findAstronautByCpf(cpf, databaseAstronaut);
