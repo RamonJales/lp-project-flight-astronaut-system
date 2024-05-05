@@ -152,8 +152,26 @@ int main() {
                     break;
                 }
             case 7:
-                // Code for option 7
-                break;
+                {
+                    int flightCode;
+                    Flight* flight;
+
+                    std::cout << "Digite o código do voo: ";
+                    std::cin >> flightCode;
+
+                    flight = findFlightByCode(flightCode, databaseFlight);
+
+                    if (flight != nullptr) {
+                        if (finish_flight(*flight, databaseAstronaut)) {
+                            std::cout << "Voo finalizado com sucesso." << std::endl;
+                        } else {
+                            std::cout << "Não foi possível finalizar o voo." << std::endl;
+                        }
+                    } else {
+                        std::cout << "Voo não encontrado." << std::endl;
+                    }
+                    break;
+                }
             case 8:
                 // Code for option 8
                 break;
