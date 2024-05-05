@@ -178,8 +178,10 @@ int main() {
                     break;
                 }
             case 9:
-                // Code for option 9
-                break;
+                {
+                    list_dead_astronauts(databaseAstronaut);
+                    break;
+                }
             case 10:
             {
                 list_astronauts(databaseAstronaut);
