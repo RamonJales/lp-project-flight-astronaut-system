@@ -12,6 +12,8 @@ Flight* findFlightById(int id, std::list<Flight> databaseFlight);
 
 Astronaut* findAstronautByCpf(std::string cpf, std::list<Astronaut> databaseAstronaut);
 
+Flight* findFlightByCode(int code, std::list<Flight> databaseFlight);
+
 void register_astronaut(Astronaut obj, std::list<Astronaut> &databaseAstronaut);
 
 void register_flight(Flight obj, std::list<Flight> &databaseFlight);
