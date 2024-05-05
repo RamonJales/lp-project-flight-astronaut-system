@@ -173,8 +173,10 @@ int main() {
                     break;
                 }
             case 8:
-                // Code for option 8
-                break;
+                {
+                    list_flights(databaseFlight, databaseAstronaut);
+                    break;
+                }
             case 9:
                 // Code for option 9
                 break;
