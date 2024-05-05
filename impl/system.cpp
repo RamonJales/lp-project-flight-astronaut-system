@@ -20,6 +20,15 @@ Flight* findFlightById(int id, std::list<Flight> databaseFlight) {
     return nullptr;
 }
 
+Flight* findFlightByCode(int code, std::list<Flight> databaseFlight) {
+    for (auto& flight : databaseFlight) {
+      if (flight.getCode() == code) {
+        return &flight;
+      }
+    }
+    return nullptr;
+}
+
 Astronaut* findAstronautByCpf(std::string cpf, std::list<Astronaut> databaseAstronaut) {
     for (auto& astronaut : databaseAstronaut) {
       if (astronaut.getCpf() == cpf) {
