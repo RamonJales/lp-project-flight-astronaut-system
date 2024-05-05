@@ -81,11 +81,33 @@ int main() {
                     } else {
                         std::cout << "Voo não encontrado." << std::endl;
                     }
+                    break;
                 }
-                break;
             case 4:
-                // Code for option 4
-                break;
+                {
+                    int flightCode;
+                    std::string cpf;
+                    Flight* flight;
+
+                    std::cout << "Digite astronaut cpf: ";
+                    std::cin >> cpf;
+
+                    std::cout << "Digite o código do voo: ";
+                    std::cin >> flightCode;
+
+                    flight = findFlightByCode(flightCode, databaseFlight);
+
+                    if (flight != nullptr) {
+                        if (remove_astronaut_from_flight_by_cpf(cpf, *flight)) {
+                            std::cout << "Astronauta removido do voo com sucesso." << std::endl;
+                        } else {
+                            std::cout << "Não foi possível remover o astronauta do voo." << std::endl;
+                        }
+                    } else {
+                        std::cout << "Voo não encontrado." << std::endl;
+                    }
+                    break;
+                }
             case 5:
                 // Code for option 5
                 break;
