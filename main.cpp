@@ -5,7 +5,7 @@
 #include "includes/system.hpp"
 #include "includes/enums/AstronautStateEnum.hpp"
 #include <list>
-
+#include <cstdlib>
 
 int main() {
     std::list<Flight> databaseFlight;
@@ -13,14 +13,17 @@ int main() {
     int flightId = 1;
     int astronautId = 1;
 
-    print_menu();
-
     //tratar as exceções
 
     int option;
     do {
+        std::system("clear");
+        print_menu();
+
         std::cout << "Enter your choice: ";
         std::cin >> option;
+        getchar();
+
         switch (option) {
             case 1:
             {
@@ -191,6 +194,8 @@ int main() {
                 std::cout << "Escolha inválida. Por favor, tente novamente." << std::endl;
                 break;
         }
+        std::cout << "Pressione Enter para continuar...";
+        getchar();
     } while (option != 0);
 
     return 0;
