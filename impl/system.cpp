@@ -136,7 +136,7 @@ void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databas
                 countPlanning++;
             }
             else {
-                std::cout << "Flight code: " << flight.getId() << std::endl;
+                std::cout << "Flight code: " << flight.getCode() << std::endl;
             }
             std::cout << "- Flight astronauts:" << std::endl;
             for (auto& cpf : flight.getAstronautsCpf()) {
@@ -151,7 +151,7 @@ void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databas
                 countOngoing++;
             }
             else {
-                std::cout << "Flight code: " << flight.getId() << std::endl;
+                std::cout << "Flight code: " << flight.getCode() << std::endl;
             }
             std::cout << "- Flight astronauts:" << std::endl;
             for (auto& cpf : flight.getAstronautsCpf()) {
@@ -166,7 +166,7 @@ void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databas
                 countExploded++;
             }
             else {
-                std::cout << "Flight code: " << flight.getId() << std::endl;
+                std::cout << "Flight code: " << flight.getCode() << std::endl;
             }
             std::cout << "- Flight astronauts:" << std::endl;
             for (auto& cpf : flight.getAstronautsCpf()) {
@@ -181,7 +181,7 @@ void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databas
                 countFinished++;
             }
             else {
-                std::cout << "Flight code: " << flight.getId() << std::endl;
+                std::cout << "Flight code: " << flight.getCode() << std::endl;
             }
             std::cout << "- Flight astronauts:" << std::endl;
             for (auto& cpf : flight.getAstronautsCpf()) {
@@ -197,6 +197,7 @@ void list_astronauts(std::list<Astronaut> databaseAstronaut) {
         std::cout << "Name: " << astronaut.getName() << std::endl;
         std::cout << "Astronaut state: " << astronaut.getAstronautState() << std::endl;
         std::cout << "Available: " << astronaut.isAvailable() << std::endl;
+        std::cout << "CPF: " << astronaut.getCpf() << std::endl;
         std::cout << "--------------------------------------------" << std::endl;
     }
 }
