@@ -20,7 +20,7 @@ Flight* findFlightById(int id, std::list<Flight> databaseFlight) {
     return nullptr;
 }
 
-Flight* findFlightByCode(int code, std::list<Flight> databaseFlight) {
+Flight* findFlightByCode(int code, std::list<Flight> &databaseFlight) {
     for (auto& flight : databaseFlight) {
       if (flight.getCode() == code) {
         return &flight;
@@ -125,7 +125,10 @@ void sort_flights_by_state(std::list<Flight>& flights) {
 }
 
 void list_flights(std::list<Flight> databaseFlight, std::list<Astronaut> databaseAstronaut) {
-    int countPlanning, countOngoing, countExploded, countFinished = 0;
+    int countPlanning = 0;
+    int countOngoing = 0;
+    int countExploded = 0;
+    int countFinished = 0;
     sort_flights_by_state(databaseFlight);
 
     for (auto& flight : databaseFlight) {
