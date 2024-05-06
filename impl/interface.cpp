@@ -19,5 +19,4 @@ void print_menu() {
     std::cout << "10. Listar Todos os Astronautas" << std::endl;
     std::cout << "0. Sair" << std::endl;
     std::cout << "======================================" << std::endl;
-    std::cout << "Escolha: ";
 }
