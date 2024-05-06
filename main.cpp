@@ -84,6 +84,7 @@ int main() {
                     } else {
                         std::cout << "Voo não encontrado." << std::endl;
                     }
+                    getchar();
                     break;
                 }
             case 4:
@@ -109,6 +110,7 @@ int main() {
                     } else {
                         std::cout << "Voo não encontrado." << std::endl;
                     }
+                    getchar();
                     break;
                 }
             case 5:
@@ -130,7 +132,7 @@ int main() {
                     } else {
                         std::cout << "Voo não encontrado." << std::endl;
                     }
-
+                    getchar();
                     break;
                 }
             case 6:
@@ -152,6 +154,7 @@ int main() {
                     } else {
                         std::cout << "Voo não encontrado." << std::endl;
                     }
+                    getchar();
                     break;
                 }
             case 7:
@@ -173,6 +176,7 @@ int main() {
                     } else {
                         std::cout << "Voo não encontrado." << std::endl;
                     }
+                    getchar();
                     break;
                 }
             case 8:
