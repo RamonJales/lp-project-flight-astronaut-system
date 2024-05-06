@@ -19,7 +19,7 @@ std::string Astronaut::getCpf() { return this->cpf; }
 int Astronaut::getAge() { return this->age; }
 bool Astronaut::isAvailable() { return this->available; }
 AstronautStateEnum Astronaut::getAstronautState() { return this->astronautState; }
-std::list<int> Astronaut::getFlightCodes() { return this->flightCodes; }
+std::list<int>& Astronaut::getFlightCodes() { return this->flightCodes; }
 
 void Astronaut::setName(std::string name) { this->name = name; }
 void Astronaut::setCpf(std::string cpf) { this->cpf = cpf; }

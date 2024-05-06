@@ -25,7 +25,7 @@ public:
   int getAge();
   bool isAvailable();
   AstronautStateEnum getAstronautState();
-  std::list<int> getFlightCodes();
+  std::list<int>& getFlightCodes();
 
   void setName(std::string name);
   void setCpf(std::string cpf);
