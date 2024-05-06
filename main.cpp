@@ -20,7 +20,7 @@ int main() {
         std::system("clear");
         print_menu();
 
-        std::cout << "Enter your choice: ";
+        std::cout << "Digite a opção: ";
         std::cin >> option;
         getchar();
 
@@ -33,13 +33,13 @@ int main() {
                 int age;
                 std::list<int> flightCodes;
 
-                std::cout << "Enter astronaut name: ";
+                std::cout << "Digite o nome do astronauta: ";
                 std::cin >> name;
 
-                std::cout << "Enter astronaut cpf: ";
+                std::cout << "Digite o cpf do astronauta: ";
                 std::cin >> cpf;
 
-                std::cout << "Enter astronaut age: ";
+                std::cout << "Digite a idade do astronauta: ";
                 std::cin >> age;
 
                 astronaut = Astronaut(astronautId, cpf, name, age, true, ALIVE, flightCodes);
@@ -53,7 +53,7 @@ int main() {
                     int code;
                     std::list<std::string> astronautsCpf;
 
-                    std::cout << "Enter flight code: ";
+                    std::cout << "Digite o código do voo: ";
                     std::cin >> code;
 
                     flight = Flight(flightId, code, PLANNING, astronautsCpf);
@@ -67,7 +67,7 @@ int main() {
                     std::string cpf;
                     Flight* flight;
 
-                    std::cout << "Digite astronaut cpf: ";
+                    std::cout << "Digite o cpf do astronauta: ";
                     std::cin >> cpf;
 
                     std::cout << "Digite o código do voo: ";
@@ -93,7 +93,7 @@ int main() {
                     std::string cpf;
                     Flight* flight;
 
-                    std::cout << "Digite astronaut cpf: ";
+                    std::cout << "Digite o cpf do astronauta: ";
                     std::cin >> cpf;
 
                     std::cout << "Digite o código do voo: ";
