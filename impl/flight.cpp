@@ -14,7 +14,7 @@ Flight::Flight(int id, int code, FlightStateEnum flightState, std::list<std::str
 int Flight::getId() { return this->id; }
 int Flight::getCode() { return this->code; }
 FlightStateEnum Flight::getFlightState() { return this->flightState; } 
-std::list<std::string> Flight::getAstronautsCpf() { return this->astronautsCpf; }
+std::list<std::string>& Flight::getAstronautsCpf() { return this->astronautsCpf; }
 
 void Flight::setCode(int code) { this->code = code; }
 void Flight::setFlightState(FlightStateEnum flightState) {this->flightState = flightState;}

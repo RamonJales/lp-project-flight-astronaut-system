@@ -19,7 +19,7 @@ public:
   int getId();
   int getCode();
   FlightStateEnum getFlightState();
-  std::list<std::string> getAstronautsCpf();
+  std::list<std::string>& getAstronautsCpf();
 
   void setCode(int code);
   void setFlightState(FlightStateEnum flightState);
