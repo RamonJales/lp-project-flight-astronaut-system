@@ -6,6 +6,7 @@
 #include "includes/enums/AstronautStateEnum.hpp"
 #include <list>
 #include <cstdlib>
+#include <limits>
 
 int main() {
     std::list<Flight> databaseFlight;
@@ -21,8 +22,13 @@ int main() {
         print_menu();
 
         std::cout << "Digite a opção: ";
-        std::cin >> option;
+        while (!(std::cin >> option)) {
+            std::cin.clear();  // Clear the error state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Discard invalid input
+            std::cout << "Entrada inválida. Digite um número: ";
+        }
         getchar();
+
 
         switch (option) {
             case 1:
